@@ -193,17 +193,22 @@ export default function OrderHistoryItem({
           {/* Per order actions */}
           <div className="p-2 lg:py-3 lg:px-6 gap-2 lg:gap-6 grid grid-cols-2 sm:flex justify-end items-center">
             {order?.fulfillments?.map((f, i) => (
-              <Button
-                key={i}
-                onClickCapture={() =>
-                  alert(`${t('trackAlert')} "${f.trackingCode}"`)
-                }
-                className="text-xs"
-              >
-                {/* Only show package number if there are more than one: Looks cleaner */}
-                {t('order.trackPackage')}{' '}
-                {order.fulfillments?.length == 1 ? '' : `#${i + 1}`}
-              </Button>
+              <>
+                <Button
+                  key={i}
+                  onClickCapture={() =>
+                    alert(`${t('trackAlert')} "${f.trackingCode}"`)
+                  }
+                  className="text-xs"
+                >
+                  {/* Only show package number if there are more than one: Looks cleaner */}
+                  {t('order.trackPackage')}{' '}
+                  {order.fulfillments?.length == 1 ? '' : `#${i + 1}`}
+                </Button>
+                <a href={f.trackingCode as string}>
+                  {f.trackingCode as string}
+                </a>
+              </>
             ))}
             <Button
               onClick={() => setAreDetailsExpanded(!areDetailsExpanded)}

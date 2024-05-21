@@ -38,11 +38,11 @@ export default function Index() {
         <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
           <div className="relative bg-zinc-800 bg-opacity-0 rounded-lg p-0">
             <h1 className="text-6xl text-transparent bg-clip-text font-extrabold tracking-normal lg:text-6xl bg-gradient-to-r from-yellow-600 via-red-500 to-blue-600">
-              {t('vendure.title')}
+              Horizons
             </h1>
           </div>
 
-          <p className="mt-4 text-2xl text-white">
+          {/* <p className="mt-4 text-2xl text-white">
             {t('vendure.intro')}{' '}
             <a
               href="https://www.vendure.io"
@@ -67,7 +67,7 @@ export default function Index() {
             >
               {t('vendure.link')}
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
 
